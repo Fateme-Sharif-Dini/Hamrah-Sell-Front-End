@@ -1,5 +1,54 @@
 @import "tailwindcss";
 
+/* Define the custom font */
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb\(FaNum\).woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2');
+  font-weight: 100; /* UltraLight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb(FaNum)_Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb(FaNum)_Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb(FaNum)_Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/public/assets/fonts/IRANSansWeb(FaNum)_Black.woff2') format('woff2');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Primary (Blue) */
   --blue-50: 230 234 251;
@@ -94,5 +143,5 @@
 body {
   background-color: rgb(var(--background));
   color: rgb(var(--foreground));
-  font-family: Inter, sans-serif;
+  font-family: 'IRANSans', sans-serif; 
 }
