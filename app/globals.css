@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Define custom font sizes using @theme */
+@theme {
+  --font-size-32px: 2rem; /* 32px */
+  --font-size-64px: 4rem; /* 64px */
+}
+
+/* Define custom utilities for the font sizes */
+@utility text-32px {
+  font-size: var(--font-size-32px);
+}
+
+@utility text-64px {
+  font-size: var(--font-size-64px);
+}
+
 /* Define the custom font */
 @font-face {
   font-family: 'IRANSans';

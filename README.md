@@ -19,3 +19,4 @@ Use `npm run commit` for commits to follow conventional standards.
 ## Branching Strategy
 - `main`: Production-ready code. Use pull requests to merge changes.
 - `develop`: Ongoing development. Push your changes here.
+
