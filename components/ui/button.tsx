@@ -10,8 +10,8 @@ const buttonVariants = cva(
       color: {
         primary: 'bg-blue-300 text-white hover:bg-blue-500',
         secondary: 'bg-blue-50 text-black border-2 border-blue-200 hover:border-transparent hover:bg-blue-100',
-        tertiary: 'bg-green-500 text-white hover:bg-green-600',
-        destructive: 'bg-red-500 text-white hover:bg-red-600',
+        tertiary: 'bg-orange-50 text-black border-2 border-orange-200 hover:border-transparent hover:bg-orange-200',
+        destructive: 'bg-orange-300 text-white hover:bg-orange-400',
       },
       // Outline variants (only applies to primary/secondary)
       outline: {

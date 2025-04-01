@@ -9,6 +9,12 @@ export default function Home() {
       <Button color="secondary" size="small" className="mx-auto my-[10%]">
         دکمه 3
       </Button>
+      <Button color="tertiary" size="small" className="mx-auto my-[10%]">
+        دکمه 5
+      </Button>
+      <Button color="destructive" size="small" className="mx-auto my-[10%]">
+        دکمه 7
+      </Button>
     </div>
   );
 }
