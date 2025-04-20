@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@tailwind utilities;
 
 /* Define custom font sizes using @theme */
 @theme {
@@ -21,7 +22,7 @@
   --blue-75: rgb(150 212 240);
   --blue-100: rgb(107 194 234);
   --blue-200: rgb(43 167 224);
-  --blue-300: rgb(0 149 218);     
+  --blue-300: rgb(0 149 218);
   --blue-400: rgb(0 104 153);
   --blue-500: rgb(0 91 133);
 
