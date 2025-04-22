@@ -1,27 +1,21 @@
 'use client';
 
+import { SearchInput } from '@/components/form/SearchInput';
 import { useState } from 'react';
-import SearchableDropdown from '../components/dropdown/SearchableDropdown';
 
 const MyComponent = () => {
-  const [selectedValue, setSelectedValue] = useState('');
-  const options = [
-    'گزینه یک',
-    'گزینه دو',
-    'گزینه سه',
-    'گزینه چهار',
-    'گزینه پنج',
-  ];
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
 
   return (
-    <div className="w-64">
-      <SearchableDropdown
-        label="عنوان دراپ داون"
-        required
-        options={['گزینه یک', 'گزینه دو', 'گزینه سه']}
-        value={selectedValue}
-        onChange={setSelectedValue}
-        error="این فیلد نمی تواند خالی باشد."
+    <div className="mx-auto max-w-3xl p-4">
+      <SearchInput
+        value={searchValue}
+        onChange={handleSearchChange}
+        placeholder="جست و جو"
       />
     </div>
   );
