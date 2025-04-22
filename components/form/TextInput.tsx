@@ -1,4 +1,4 @@
-'use client';
+ 'use client';
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -33,7 +33,7 @@ interface FieldInputProps {
   className?: string;
 }
 
-export function FieldInput({
+export function TextInput({
   label,
   placeholder,
   required,

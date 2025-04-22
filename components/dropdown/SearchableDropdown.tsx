@@ -78,7 +78,7 @@ const SearchableDropdown = ({
           <div className="absolute z-10 mt-1 w-full rounded-b-md border border-t-0 bg-white shadow-sm">
             <div className="p-2">
               <div className="relative flex items-center">
-                <MagnifyingGlass className="absolute left-3 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                <MagnifyingGlass className="absolute left-3 h-5 w-5 -translate-y-1/2 transform stroke-gray-400 text-gray-400" />
                 <input
                   type="text"
                   value={searchTerm}

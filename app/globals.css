@@ -1,11 +1,6 @@
 @import 'tailwindcss';
 @tailwind utilities;
 
-/* Define custom font sizes using @theme */
-@theme {
-  --font-size-32px: 2rem; /* 32px */
-  --font-size-64px: 4rem; /* 64px */
-}
 
 /* Define custom utilities for the font sizes */
 @utility text-32px {
