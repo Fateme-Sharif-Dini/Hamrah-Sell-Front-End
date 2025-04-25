@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import SearchableDropdown from '../components/dropdown/SearchableDropdown';
-
+import SelectableCard from '../components/card/SelectableCard'
 const MyComponent = () => {
   const [selectedValue, setSelectedValue] = useState('');
   const options = [
@@ -14,16 +14,23 @@ const MyComponent = () => {
   ];
 
   return (
-    <div className="w-64">
-      <SearchableDropdown
-        label="عنوان دراپ داون"
-        required
-        options={['گزینه یک', 'گزینه دو', 'گزینه سه']}
-        value={selectedValue}
-        onChange={setSelectedValue}
-        error="این فیلد نمی تواند خالی باشد."
-      />
+    <div >
+<SelectableCard
+  variant="rectangle"
+  image='/images/StoresCart.png'
+  href='/store/page'
+  cardTitle='Store'
+  storeName="Store Name"
+  signTitle="Store Description"
+  items={[
+    { label: "Location" },
+    { label: "Phone" },
+    { label: "Email" },
+  ]}
+/>
     </div>
+
+
   );
 };
 
