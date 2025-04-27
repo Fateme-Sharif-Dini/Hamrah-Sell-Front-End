@@ -1,24 +1,22 @@
 'use client';
 
-import { SearchInput } from '@/components/form/SearchInput';
-import { useState } from 'react';
+import { toast } from 'sonner';
+import { CustomToaster } from '@/components/ui/sonner';
 
-const MyComponent = () => {
-  const [searchValue, setSearchValue] = useState('');
+function showToast(type: 'success' | 'error') {
+  toast.custom(() => (
+    <CustomToaster title="این یک متن برای نوتیفیکیشن است!" type={type} />
+  ));
+}
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
-
+export default function Page() {
   return (
-    <div className="mx-auto max-w-3xl p-4">
-      <SearchInput
-        value={searchValue}
-        onChange={handleSearchChange}
-        placeholder="جست و جو"
-      />
-    </div>
-  );
-};
+    <>
+      <div className="mt-10 flex flex-col gap-4">
+        <button onClick={() => showToast('success')}>موفقیت</button>
 
-export default MyComponent;
+        <button onClick={() => showToast('error')}>خطا</button>
+      </div>
+    </>
+  );
+}
