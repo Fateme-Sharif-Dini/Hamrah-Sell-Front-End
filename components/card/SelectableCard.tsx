@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -117,7 +118,7 @@ export default function SelectableCard({
     selected: isActive
       ? "bg-primary text-primary-foreground transform scale-[0.98]"
       : "bg-card text-card-foreground",
-    square: "w-[356px] h-[300px] flex flex-col justify-center items-center p-0 border-[#BFBFBF] border-[2px]",
+    square: "w-75 h-70 flex flex-col p-0 border-[#BFBFBF] border-[2px]",
     rectangle: "rounded-xl h-[128px] w-[1523px] p-0 border-[#BFBFBF] border-[2px]",
     store: "rounded-xl h-[128px] w-[1523px] border-[#BFBFBF] border-[2px] p-0",
     supplier: "rounded-xl h-[128px] w-[1523px] border-[#BFBFBF] border-[2px] p-0",
@@ -179,14 +180,14 @@ export default function SelectableCard({
       )}
 
       {variant === "square" && (
-        <div className="relative flex flex-col w-full h-full">
-          <div className="relative w-[356px] h-[237px] top-0">
+        <div className="relative flex flex-col w-full h-full p-0">
+          <div className="w-75 h-60 p-0 m-0">
             <Image
               src={image}
               alt={title || "square"}
               fill
               className={clsx(
-                "object-contain transition-all duration-150",
+                "object-contain transition-all duration-150 align-top",
                 isActive && "brightness-50"
               )}
             />

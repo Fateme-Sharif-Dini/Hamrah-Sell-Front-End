@@ -102,3 +102,12 @@
   --destructive-foreground: var(--neutral-0);
   --ring: var(--blue-300);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
