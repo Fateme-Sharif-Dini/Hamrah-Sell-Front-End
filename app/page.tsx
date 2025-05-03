@@ -16,7 +16,7 @@ const MyComponent = () => {
   return (
     <div >
 <SelectableCard
-  variant="store"
+  variant="rectangle"
   image='/images/StoresCart.png'
   href='/store/page'
   cardTitle='Store'

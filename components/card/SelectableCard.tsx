@@ -162,7 +162,7 @@ export default function SelectableCard({
                 isActive && "brightness-50"
               )}
             />
-            {selected && (
+            {isActive && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-[108px] h-[79px]">
                   <Image
@@ -190,7 +190,7 @@ export default function SelectableCard({
                 isActive && "brightness-50"
               )}
             />
-            {selected && (
+            {isActive && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-[176px] h-[129px]">
                   <Image
