@@ -46,6 +46,7 @@ export default function SelectableCard({
   cardTitle,
 }: Props) {
   const [selected, setSelected] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const router = useRouter();
 
   const handleClick = () => {
@@ -109,9 +110,11 @@ export default function SelectableCard({
     );
   };
 
+  const isActive = selected || hovered;
+
   const cardStyles = {
     base: "cursor-pointer transition-all duration-150 overflow-hidden hover:shadow-md",
-    selected: selected
+    selected: isActive
       ? "bg-primary text-primary-foreground transform scale-[0.98]"
       : "bg-card text-card-foreground",
     square: "w-[356px] h-[300px] flex flex-col justify-center items-center p-0 border-[#BFBFBF] border-[2px]",
@@ -123,6 +126,8 @@ export default function SelectableCard({
   return (
     <Card
       onClick={handleClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       className={clsx(
         cardStyles.base,
         cardStyles.selected,
@@ -138,13 +143,13 @@ export default function SelectableCard({
           <div className="absolute right-[208px] top-[40%] -translate-y-1/2">
             <h3 className={clsx(
               "text-[32px] font-semibold text-right transition-colors duration-150",
-              selected ? "text-[#005B85]" : "text-black"
+              isActive ? "text-[#005B85] -translate-x-2" : "text-black"
             )}>{cardTitle || title}</h3>
           </div>
           <div 
             className={clsx(
               "absolute bottom-0 left-0 right-[192px] h-[32px] transition-colors duration-150",
-              selected ? "bg-[#006899]" : "bg-[#0095DA]"
+              isActive ? "bg-[#006899]" : "bg-[#0095DA]"
             )}
           />
           <div className="right-0 top-0 w-[192px] h-[128px] relative">
@@ -154,7 +159,7 @@ export default function SelectableCard({
               fill
               className={clsx(
                 "object-cover transition-all duration-150",
-                selected && "brightness-50"
+                isActive && "brightness-50"
               )}
             />
             {selected && (
@@ -182,7 +187,7 @@ export default function SelectableCard({
               fill
               className={clsx(
                 "object-contain transition-all duration-150",
-                selected && "brightness-50"
+                isActive && "brightness-50"
               )}
             />
             {selected && (
@@ -200,25 +205,25 @@ export default function SelectableCard({
           </div>
           <span className={clsx(
             "font-semibold text-center text-[20px] line-clamp-2 transition-colors duration-150",
-            selected ? "text-[#005B85]" : "text-black"
+            isActive ? "text-[#005B85]" : "text-black"
           )}>
             {cardTitle || title}
           </span>
           <div 
             className={clsx(
               "absolute bottom-0 lef-0 right-0 h-[13px] w-[356px] transition-colors duration-150",
-              selected ? "bg-[#006899]" : "bg-[#0095DA]"
+              isActive ? "bg-[#006899]" : "bg-[#0095DA]"
             )}
           />
         </div>
       )}
 
-      {(variant === "store" || variant === "supplier") && (
+      {variant === "store"  && (
         <div className="flex flex-row w-[1523px]">
           <div className="flex flex-1 flex-col p-4">
             <h3 className={clsx(
-              "font-semibold text-lg mb-2 transition-colors duration-150",
-              selected ? "text-[#005B85]" : "text-black"
+              "font-semibold text-2xl mb-2 transition-colors duration-150",
+              isActive ? "text-[#005B85]" : "text-black"
             )}>{cardTitle || storeName}</h3>
             
             <div className="flex items-center gap-2 mb-3">
@@ -228,7 +233,7 @@ export default function SelectableCard({
               <p className="text-sm text-muted-foreground">{signTitle}</p>
             </div>
 
-            <div className="flex flex-wrap gap-[48px]">
+            <div className="flex flex-wrap gap-30">
               {items.map(renderItemWithIcon)}
             </div>
           </div>
@@ -244,7 +249,36 @@ export default function SelectableCard({
           {/* Chevron Container */}
           <div className={clsx(
             "relative left-0 top-0 p-0 m-0 w-[32px] h-[126px] flex items-center justify-center transition-colors duration-150",
-            selected ? "bg-[#0095DA]" : "bg-white"
+            isActive ? "bg-[#0095DA]" : "bg-white"
+          )}>
+            <ChevronLeft className="w-6 h-6 text-black" />
+          </div>
+        </div>
+      )}
+            {variant === "supplier"  && (
+        <div className="flex flex-row w-[1523px]">
+          <div className="flex flex-1 flex-col p-4">
+            <h3 className={clsx(
+              "font-semibold text-2xl mb-2 transition-colors duration-150",
+              isActive ? "text-[#005B85]" : "text-black"
+            )}>{cardTitle || storeName}</h3>
+            <div className="flex flex-wrap gap-30 mt-8">
+              {items.map(renderItemWithIcon)}
+            </div>
+          </div>
+          {/* Store Image */}
+          <div className="relative w-[192px] h-[128px] flex-shrink-0">
+          <Image
+              src={image}
+              alt={title || "image"}
+              fill
+            />
+          </div>
+
+          {/* Chevron Container */}
+          <div className={clsx(
+            "relative left-0 top-0 p-0 m-0 w-[32px] h-[126px] flex items-center justify-center transition-colors duration-150",
+            isActive ? "bg-[#0095DA]" : "bg-white"
           )}>
             <ChevronLeft className="w-6 h-6 text-black" />
           </div>
