@@ -1,20 +1,29 @@
-import { InputHTMLAttributes } from 'react';
-import { cn } from '@/lib/utils';
-import { Star } from '../icons/StarIcon';
+'use client';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  icon?: React.ReactNode;
+interface InputProps {
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
+  type?: 'text' | 'password';
 }
 
-export const Input = ({ label, icon, className, ...props }: InputProps) => {
+export const Input = ({
+  placeholder,
+  value = '',
+  onChange,
+  className,
+  type,
+}: InputProps) => {
   return (
-    <div className="space-y-2">
-      <div className="flex">
-        <label className="text-xl">{label}</label>
-        {icon && <Star />}
-      </div>
-      <input className={cn('w-1/3 py-3 rounded-xl border px-2', className)} {...props} />
+    <div className="relative w-full">
+      <input
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={onChange}
+        className={`w-full rounded-xl border bg-white px-2 py-3 pr-5 ${className || ''}`}
+      />
     </div>
   );
 };

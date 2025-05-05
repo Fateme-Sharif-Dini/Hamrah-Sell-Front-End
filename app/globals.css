@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @tailwind utilities;
 
-
 /* Define custom utilities for the font sizes */
 @utility text-32px {
   font-size: var(--font-size-32px);
@@ -9,6 +8,10 @@
 
 @utility text-64px {
   font-size: var(--font-size-64px);
+}
+
+.text-\[var\(--blue-500\)\] {
+  color: var(--blue-500);
 }
 
 :root {
