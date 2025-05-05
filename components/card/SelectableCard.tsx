@@ -75,7 +75,7 @@ export default function SelectableCard({
   };
 
   const renderImage = () => (
-    <div className="relative w-[192px] h-[128px] overflow-hidden rounded-t-xl">
+    <div className="relative w-5 h-5 overflow-hidden rounded-t-xl">
       <Image
         src={image}
         alt={title || "image"}
@@ -118,10 +118,10 @@ export default function SelectableCard({
     selected: isActive
       ? "bg-primary text-primary-foreground transform scale-[0.98]"
       : "bg-card text-card-foreground",
-    square: "w-75 h-70 flex flex-col p-0 border-[#BFBFBF] border-[2px]",
-    rectangle: "rounded-xl h-[128px] w-[1523px] p-0 border-[#BFBFBF] border-[2px]",
-    store: "rounded-xl h-[128px] w-[1523px] border-[#BFBFBF] border-[2px] p-0",
-    supplier: "rounded-xl h-[128px] w-[1523px] border-[#BFBFBF] border-[2px] p-0",
+    square: "w-65 h-60 flex flex-col p-0 border-[#BFBFBF] border-[2px]",
+    rectangle: "rounded-xl h-22 w-250 p-0 border-[#BFBFBF] border-[2px]",
+    store: "rounded-xl h-22 w-250 border-[#BFBFBF] border-[2px] p-0",
+    supplier: "rounded-xl h-22 w-250 border-[#BFBFBF] border-[2px] p-0",
   };
 
   return (
@@ -137,23 +137,23 @@ export default function SelectableCard({
       )}
     >
       {variant === "rectangle" && (
-        <div className="relative h-[128px] w-[1523px] bg-white">
+        <div className="relative h-22 w-250 bg-white">
           <div className="absolute left-4 top-[40%] -translate-y-1/2">
-            <ChevronLeft className="w-8 h-8 text-black" />
+            <ChevronLeft className="w-5 h-5 text-black" />
           </div>
-          <div className="absolute right-[208px] top-[40%] -translate-y-1/2">
+          <div className="absolute right-35 top-[40%] -translate-y-1/2">
             <h3 className={clsx(
-              "text-[32px] font-semibold text-right transition-colors duration-150",
+              "text-3xl font-semibold text-right transition-colors duration-150",
               isActive ? "text-[#005B85] -translate-x-2" : "text-black"
             )}>{cardTitle || title}</h3>
           </div>
           <div 
             className={clsx(
-              "absolute bottom-0 left-0 right-[192px] h-[32px] transition-colors duration-150",
+              "absolute bottom-0 left-0 right-1 h-5 transition-colors duration-150",
               isActive ? "bg-[#006899]" : "bg-[#0095DA]"
             )}
           />
-          <div className="right-0 top-0 w-[192px] h-[128px] relative">
+          <div className="right-0 top-0 w-30 h-22 relative">
             <Image
               src={image}
               alt={title || "image"}
@@ -165,7 +165,7 @@ export default function SelectableCard({
             />
             {isActive && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-[108px] h-[79px]">
+                <div className="relative w-20 h-20">
                   <Image
                     src="/images/logo-s2.png"
                     alt="MCI logo"
@@ -180,20 +180,20 @@ export default function SelectableCard({
       )}
 
       {variant === "square" && (
-        <div className="relative flex flex-col w-full h-full p-0">
-          <div className="w-75 h-60 p-0 m-0">
+        <div className="relative flex flex-col w-65 h-60 p-0">
+          <div className="relative w-full h-[calc(100%-62px)]">
             <Image
               src={image}
               alt={title || "square"}
               fill
               className={clsx(
-                "object-contain transition-all duration-150 align-top",
+                "object-contain transition-all",
                 isActive && "brightness-50"
               )}
             />
             {isActive && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-[176px] h-[129px]">
+                <div className="relative w-30 h-30">
                   <Image
                     src="/images/logo-s2.png"
                     alt="MCI logo"
@@ -205,14 +205,14 @@ export default function SelectableCard({
             )}
           </div>
           <span className={clsx(
-            "font-semibold text-center text-[20px] line-clamp-2 transition-colors duration-150",
+            "font-semibold text-center text-[20px] line-clamp-2 transition-colors duration-150 h-8 flex items-center justify-center mt-2",
             isActive ? "text-[#005B85]" : "text-black"
           )}>
             {cardTitle || title}
           </span>
           <div 
             className={clsx(
-              "absolute bottom-0 lef-0 right-0 h-[13px] w-[356px] transition-colors duration-150",
+              "absolute bottom-0 left-0 right-0 h-[13px] w-[356px] transition-colors duration-150",
               isActive ? "bg-[#006899]" : "bg-[#0095DA]"
             )}
           />
@@ -220,26 +220,55 @@ export default function SelectableCard({
       )}
 
       {variant === "store"  && (
-        <div className="flex flex-row w-[1523px]">
-          <div className="flex flex-1 flex-col p-4">
+        <div className="flex flex-row w-250">
+          <div className="flex flex-1 flex-col">
             <h3 className={clsx(
-              "font-semibold text-2xl mb-2 transition-colors duration-150",
+              "font-semibold text-2xl transition-colors duration-150 mr-4",
               isActive ? "text-[#005B85]" : "text-black"
             )}>{cardTitle || storeName}</h3>
             
-            <div className="flex items-center gap-2 mb-3">
-              <div className="relative w-[24px] h-[24px]">
+            <div className="flex items-center gap-2 mb-2 mr-4">
+              <div className="relative w-2 h-3">
               <VectorIcon />
               </div>
-              <p className="text-sm text-muted-foreground">{signTitle}</p>
+              <p className="text-sm mr-1 mt-1">{signTitle}</p>
             </div>
 
+            <div className="flex flex-wrap gap-30 mr-4">
+              {items.map(renderItemWithIcon)}
+            </div>
+          </div>
+          {/* Store Image */}
+          <div className="relative w-30 h-22 flex-shrink-0">
+          <Image
+              src={image}
+              alt={title || "image"}
+              fill
+            />
+          </div>
+
+          {/* Chevron Container */}
+          <div className={clsx(
+            "relative left-0 top-0 p-0 m-0 w-5 h-22 flex items-center justify-center transition-colors",
+            isActive ? "bg-[#0095DA]" : "bg-white"
+          )}>
+            <ChevronLeft className="w-5 h-5 text-black" />
+          </div>
+        </div>
+      )}
+            {variant === "supplier"  && (
+        <div className="flex flex-row w-250">
+          <div className="flex flex-1 flex-col p-4">
+            <h3 className={clsx(
+              "font-semibold text-2xl mb-3 transition-colors duration-150",
+              isActive ? "text-[#005B85]" : "text-black"
+            )}>{cardTitle || storeName}</h3>
             <div className="flex flex-wrap gap-30">
               {items.map(renderItemWithIcon)}
             </div>
           </div>
           {/* Store Image */}
-          <div className="relative w-[192px] h-[128px] flex-shrink-0">
+          <div className="relative w-30 h-22 flex-shrink-0">
           <Image
               src={image}
               alt={title || "image"}
@@ -249,36 +278,7 @@ export default function SelectableCard({
 
           {/* Chevron Container */}
           <div className={clsx(
-            "relative left-0 top-0 p-0 m-0 w-[32px] h-[126px] flex items-center justify-center transition-colors duration-150",
-            isActive ? "bg-[#0095DA]" : "bg-white"
-          )}>
-            <ChevronLeft className="w-6 h-6 text-black" />
-          </div>
-        </div>
-      )}
-            {variant === "supplier"  && (
-        <div className="flex flex-row w-[1523px]">
-          <div className="flex flex-1 flex-col p-4">
-            <h3 className={clsx(
-              "font-semibold text-2xl mb-2 transition-colors duration-150",
-              isActive ? "text-[#005B85]" : "text-black"
-            )}>{cardTitle || storeName}</h3>
-            <div className="flex flex-wrap gap-30 mt-8">
-              {items.map(renderItemWithIcon)}
-            </div>
-          </div>
-          {/* Store Image */}
-          <div className="relative w-[192px] h-[128px] flex-shrink-0">
-          <Image
-              src={image}
-              alt={title || "image"}
-              fill
-            />
-          </div>
-
-          {/* Chevron Container */}
-          <div className={clsx(
-            "relative left-0 top-0 p-0 m-0 w-[32px] h-[126px] flex items-center justify-center transition-colors duration-150",
+            "relative left-0 top-0 p-0 m-0 w-5 h-22 flex items-center justify-center transition-colors duration-150",
             isActive ? "bg-[#0095DA]" : "bg-white"
           )}>
             <ChevronLeft className="w-6 h-6 text-black" />

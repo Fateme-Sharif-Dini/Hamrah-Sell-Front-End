@@ -94,9 +94,9 @@ export default function HomePage() {
         </div>
 
         {/* Quick Access */}
-        <div className="space-y-2 ">
+        <div className="space-y-2 mx-10">
           <h2 className="text-center text-lg font-bold text-[#0095DA]">دسترسی سریع</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-2 border-gray-300 p-5 rounded-xl">
+          <div className="flex flex-row gap-8 border-2 border-gray-300 p-5 px-8 rounded-xl w-230" >
             <Card 
               variant='square'
               image='/images/card1.png'
