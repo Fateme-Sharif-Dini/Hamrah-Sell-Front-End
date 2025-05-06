@@ -1,0 +1,25 @@
+# #!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'Ok, Good Job. lets go to build project for production'
+
+# Fetch latest branches from remote
+git fetch origin
+
+# Get the current branch name
+CURRENT_BRANCH=$(git branch --show-current)
+
+# Check if the remote branch exists
+if git ls-remote --exit-code origin $CURRENT_BRANCH; then
+  echo "Remote branch exists, setting upstream to origin/$CURRENT_BRANCH"
+  git branch --set-upstream-to=origin/$CURRENT_BRANCH
+  
+    # Pull latest changes
+  git pull origin $CURRENT_BRANCHs
+  
+  else
+  echo "Remote branch does not exist, creating and pushing the branch to remote"
+fi
+
+# Build Project
+npm run build

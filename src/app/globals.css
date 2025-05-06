@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+@tailwind utilities;
+
+/* Define custom utilities for the font sizes */
+@utility text-32px {
+  font-size: var(--font-size-32px);
+}
+
+@utility text-64px {
+  font-size: var(--font-size-64px);
+}
+
+.text-\[var\(--blue-500\)\] {
+  color: var(--blue-500);
+}
+
+:root {
+  /* Primary (Blue) */
+  --blue-50: rgb(230 244 251);
+  --blue-75: rgb(150 212 240);
+  --blue-100: rgb(107 194 234);
+  --blue-200: rgb(43 167 224);
+  --blue-300: rgb(0 149 218);
+  --blue-400: rgb(0 104 153);
+  --blue-500: rgb(0 91 133);
+
+  /* Neutral (White/Black) */
+  --neutral-0: rgb(255 255 255);
+  --neutral-10: rgb(245 245 245);
+  --neutral-20: rgb(235 235 235);
+  --neutral-30: rgb(222 222 222);
+  --neutral-40: rgb(191 191 191);
+  --neutral-60: rgb(176 176 176);
+  --neutral-70: rgb(163 163 163);
+  --neutral-80: rgb(148 148 148);
+  --neutral-80b: rgb(133 133 133);
+
+  /* Secondary (Black) */
+  --black-100: rgb(117 117 117);
+  --black-200: rgb(102 102 102);
+  --black-300: rgb(87 87 87);
+  --black-400: rgb(74 74 74);
+  --black-500: rgb(59 59 59);
+  --black-600: rgb(40 40 40);
+  --black-700: rgb(28 28 28);
+  --black-800: rgb(19 19 19);
+  --black-900: rgb(0 0 0);
+
+  /* Feedback (Orange) */
+  --orange-50: rgb(255, 237, 230);
+  --orange-75: rgb(225 183 150);
+  --orange-100: rgb(225 155 107);
+  --orange-200: rgb(225 109 43);
+  --orange-300: rgb(225 79 0);
+  --orange-400: rgb(179 55 0);
+  --orange-500: rgb(156 48 0);
+
+  --hamrah-green: rgb(0, 182, 15);
+}

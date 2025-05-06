@@ -1,0 +1,8 @@
+/node_modules
+/.next
+/.husky
+/deployment
+/cicd
+/svgs
+/public
+/messages
