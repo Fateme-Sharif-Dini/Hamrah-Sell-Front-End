@@ -98,12 +98,12 @@ export const DashboardSidebar: FC = () => {
                   {!action ? (
                     <Link href={href}>
                       {icon}
-                      <span className="font-bold">{title}</span>
+                      {!!open && <span className="font-bold">{title}</span>}
                     </Link>
                   ) : (
-                    <div className="flex w-full items-center justify-start gap-1">
+                    <div className="[&>svg]:size-8 flex w-full items-center justify-start gap-1">
                       {icon}
-                      <span className="font-bold">{title}</span>
+                      {!!open && <span className="font-bold">{title}</span>}
                     </div>
                   )}
                 </Button>
@@ -113,21 +113,23 @@ export const DashboardSidebar: FC = () => {
         </ul>
       </div>
 
-      <div className="space-y-8">
-        <div>
-          <SvgLogoB2 className="m-auto h-[71px] w-[173px]" />
-        </div>
-        <div className="*:bg-primary-75 *:text-black *:rounded-full *:px-4 *:py-1.5 *:flex *:items-center *:gap-1 space-y-4">
+      {!!open && (
+        <div className="space-y-8">
           <div>
-            <SvgClock />
-            <p className="font-bold">ساعت: 20:30 </p>
+            <SvgLogoB2 className="m-auto h-[71px] w-[173px]" />
           </div>
-          <div>
-            <SvgCalendar />
-            <p className="font-bold">تاریخ: 20 اردیبهشت 1403</p>
+          <div className="*:bg-primary-75 *:text-black *:rounded-full *:px-4 *:py-1.5 *:flex *:items-center *:gap-1 space-y-4">
+            <div>
+              <SvgClock />
+              <p className="font-bold">ساعت: 20:30 </p>
+            </div>
+            <div>
+              <SvgCalendar />
+              <p className="font-bold">تاریخ: 20 اردیبهشت 1403</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
