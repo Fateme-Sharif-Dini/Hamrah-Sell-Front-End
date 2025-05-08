@@ -1,9 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Check, ChevronsUpDown } from 'lucide-react';
+// import { Check, ChevronsUpDown } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
   Command,
@@ -57,7 +56,7 @@ export function ComboboxDemo() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : 'Select framework...'}
-          <ChevronsUpDown className="opacity-50" />
+          {/* <ChevronsUpDown className="opacity-50" /> */}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -76,12 +75,12 @@ export function ComboboxDemo() {
                   }}
                 >
                   {framework.label}
-                  <Check
+                  {/* <Check
                     className={cn(
                       'ml-auto',
                       value === framework.value ? 'opacity-100' : 'opacity-0'
                     )}
-                  />
+                  /> */}
                 </CommandItem>
               ))}
             </CommandGroup>

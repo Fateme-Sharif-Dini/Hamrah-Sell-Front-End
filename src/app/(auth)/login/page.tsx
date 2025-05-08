@@ -71,14 +71,14 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="cursor-pointer text-center text-xs font-bold text-[var(--blue-400)] underline hover:text-gray-800">
+        <div className="cursor-pointer text-center text-xs font-bold text-[var(--primary-400)] underline hover:text-gray-800">
           فراموشی رمز
         </div>
 
         <Button
           type="submit"
           color="primary"
-          size="large"
+          size="lg"
           className="w-3xs py-2.5"
           disabled={isLoading}
           onClick={async () => {

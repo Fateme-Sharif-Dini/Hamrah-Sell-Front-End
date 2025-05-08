@@ -90,26 +90,26 @@ export const authConfig = {
       return session;
     },
     async authorized({ auth, request }) {
-      const { nextUrl } = request;
-      const isAuthenticated = !!auth?.user;
-      const authRoutes = ['/signin', '/verification'];
+      // const { nextUrl } = request;
+      // const isAuthenticated = !!auth?.user;
+      // const authRoutes = ['/signin', '/verification'];
 
-      const isAuthRoutes = authRoutes.includes(nextUrl.pathname);
+      // const isAuthRoutes = authRoutes.includes(nextUrl.pathname);
 
-      if (isAuthRoutes && isAuthenticated) {
-        const callbackUrl = nextUrl.searchParams.get('callbackUrl');
+      // if (isAuthRoutes && isAuthenticated) {
+      //   const callbackUrl = nextUrl.searchParams.get('callbackUrl');
 
-        return Response.redirect(
-          new URL(`${callbackUrl ? callbackUrl : '/products'}`, nextUrl)
-        );
-      }
+      //   return Response.redirect(
+      //     new URL(`${callbackUrl ? callbackUrl : '/products'}`, nextUrl)
+      //   );
+      // }
 
-      // Redirect unauthenticated users trying to access protected routes
-      if (!isAuthenticated && !isAuthRoutes) {
-        // Add callback to redirect users back to the requested page after authentication
-        const redirectUrl = `/signin?callbackUrl=${nextUrl.pathname}`;
-        return Response.redirect(new URL(redirectUrl, nextUrl));
-      }
+      // // Redirect unauthenticated users trying to access protected routes
+      // if (!isAuthenticated && !isAuthRoutes) {
+      //   // Add callback to redirect users back to the requested page after authentication
+      //   const redirectUrl = `/signin?callbackUrl=${nextUrl.pathname}`;
+      //   return Response.redirect(new URL(redirectUrl, nextUrl));
+      // }
 
       return true;
     },

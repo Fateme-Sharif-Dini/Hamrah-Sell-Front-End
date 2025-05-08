@@ -5,10 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { cva } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
-import { Star } from '../icons/StarIcon';
-import { ExclamationMark } from '../icons/ExclamationMarkIcon';
-import { EyeIcon } from '../icons/EyeIcon';
-import { EyeSlashIcon } from '../icons/EyeSlashIcon';
+// import { Star } from '../icons/StarIcon';
+// import { ExclamationMark } from '../icons/ExclamationMarkIcon';
+// import { EyeIcon } from '../icons/EyeIcon';
+// import { EyeSlashIcon } from '../icons/EyeSlashIcon';
 
 const inputVariants = cva(
   'w-full py-2 px-3 rounded-md text-base focus:outline-none transition-colors duration-200',
@@ -55,7 +55,7 @@ export function TextInput({
     <div dir="rtl" className="w-full space-y-2">
       <Label className="flex items-end gap-1 text-xl font-bold">
         {label}
-        {required && <Star />}
+        {/* {required && <Star />} */}
       </Label>
       <div className="relative">
         <Input
@@ -73,20 +73,20 @@ export function TextInput({
           <button
             type="button"
             onClick={() => setShowPassword((prev) => !prev)}
-            className="absolute top-3.5 left-4 cursor-pointer text-gray-500"
+            className="absolute left-4 top-3.5 cursor-pointer text-gray-500"
             tabIndex={-1}
           >
-            {showPassword ? (
+            {/* {showPassword ? (
               <EyeIcon className="h-5 w-5" />
             ) : (
               <EyeSlashIcon className="h-5 w-5" />
-            )}
+            )} */}
           </button>
         )}
       </div>
       {error && (
         <p className="mt-1 flex items-center gap-1 text-sm text-orange-500">
-          <ExclamationMark />
+          {/* <ExclamationMark /> */}
           {error}
         </p>
       )}

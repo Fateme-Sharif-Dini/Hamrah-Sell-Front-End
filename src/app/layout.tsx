@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
-import './globals.css';
 import { Toaster } from 'sonner';
+import './globals.css';
+import classnames from 'classnames';
+import { IranSans } from '@/configs/font';
 
 export const metadata: Metadata = {
   title: 'Hamrah Sell',
@@ -14,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className={classnames(IranSans.className)}>
         <main>{children}</main>
         <Toaster richColors closeButton />
       </body>

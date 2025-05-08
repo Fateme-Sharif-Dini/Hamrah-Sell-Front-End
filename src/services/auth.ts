@@ -33,8 +33,9 @@ export async function login(
     localStorage.setItem('refresh_token', response.data.refresh);
     localStorage.setItem('user', JSON.stringify(response.data.user));
 
-    axiosInstance.defaults.headers.common['Authorization'] =
-      `Bearer ${response.data.access}`;
+    axiosInstance.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${response.data.access}`;
 
     return response.data;
   } catch (error: any) {
@@ -66,8 +67,9 @@ export async function refreshToken(): Promise<string> {
     );
 
     localStorage.setItem('access_token', response.data.access);
-    axiosInstance.defaults.headers.common['Authorization'] =
-      `Bearer ${response.data.access}`;
+    axiosInstance.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${response.data.access}`;
 
     return response.data.access;
   } catch (error) {

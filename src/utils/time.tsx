@@ -7,7 +7,9 @@ export function millisecondsToHHMMSS(milliseconds: number): string {
   const formattedMinutes = minutes.toString().padStart(2, '0');
   const formattedSeconds = seconds.toString().padStart(2, '0');
 
-  return `${formattedHours}:${formattedMinutes}${hours > 0 ? ':' + formattedSeconds : ''}`;
+  return `${formattedHours}:${formattedMinutes}${
+    hours > 0 ? ':' + formattedSeconds : ''
+  }`;
 }
 
 export function secondsToHHMMSS(totalSeconds: number): string {

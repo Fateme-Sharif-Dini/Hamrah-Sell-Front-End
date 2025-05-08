@@ -44,7 +44,9 @@ export const buildQueryParams = (
           queryParts.push(buildQueryParams(item as QueryParamObject, paramKey));
         } else {
           queryParts.push(
-            `${encodeURIComponent(paramKey)}=${encodeURIComponent(String(item))}`
+            `${encodeURIComponent(paramKey)}=${encodeURIComponent(
+              String(item)
+            )}`
           );
         }
       });

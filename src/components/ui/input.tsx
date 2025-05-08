@@ -22,7 +22,9 @@ export const Input = ({
         type={type}
         value={value}
         onChange={onChange}
-        className={`w-full rounded-xl border bg-white px-2 py-3 pr-5 ${className || ''}`}
+        className={`w-full rounded-xl border bg-white px-2 py-3 pr-5 ${
+          className || ''
+        }`}
       />
     </div>
   );

@@ -1,14 +1,110 @@
 @import 'tailwindcss';
 
+:root {
+  --radius: 0.625rem;
+  --color-white: #fff;
+  --color-black: #000;
+  /* Base UI */
+  --background: var(--neutral-0);
+  --foreground: var(--black-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--black-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--black-900);
+
+  /* Primary = Blue-500 */
+  --primary: var(--color-primary-500);
+  --primary-foreground: var(--color-white);
+
+  /* Secondary = Orange-300 */
+  --secondary: var(--secondary-300);
+  --secondary-foreground: var(--color-white);
+
+  /* Others */
+  --muted: var(--neutral-20);
+  --muted-foreground: var(--black-400);
+
+  --accent: var(--secondary-50);
+  --accent-foreground: var(--black-600);
+
+  --destructive: rgb(156, 48, 0); /* orange-500 */
+  --border: var(--neutral-30);
+  --input: var(--neutral-20);
+  --ring: var(--color-primary-200);
+
+  /* Charts */
+  --chart-1: rgb(0, 150, 218); /* blue-300 */
+  --chart-2: rgb(225, 109, 43); /* orange-200 */
+  --chart-3: rgb(0, 182, 15); /* hamrah-green */
+  --chart-4: var(--color-primary-100);
+  --chart-5: var(--secondary-100);
+
+  /* Sidebar */
+  --sidebar: var(--neutral-10);
+  --sidebar-foreground: var(--black-900);
+  --sidebar-primary: var(--color-primary-500);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--secondary-75);
+  --sidebar-accent-foreground: var(--black-700);
+  --sidebar-border: var(--neutral-30);
+  --sidebar-ring: var(--color-primary-300);
+}
+
+.dark {
+  --background: var(--black-900);
+  --foreground: var(--color-white);
+  --card: var(--black-800);
+  --card-foreground: var(--color-white);
+  --popover: var(--black-700);
+  --popover-foreground: var(--color-white);
+
+  --primary: var(--color-primary-100);
+  --primary-foreground: var(--black-900);
+
+  --secondary: var(--secondary-50);
+  --secondary-foreground: var(--black-500);
+
+  --muted: var(--black-700);
+  --muted-foreground: var(--neutral-60);
+
+  --accent: var(--color-primary-50);
+  --accent-foreground: var(--black-900);
+
+  --destructive: var(--secondary-500);
+  --border: var(--black-700);
+  --input: var(--black-800);
+  --ring: var(--color-primary-200);
+
+  --chart-1: var(--color-primary-200);
+  --chart-2: var(--secondary-200);
+  --chart-3: var(--hamrah-green);
+  --chart-4: var(--color-primary-100);
+  --chart-5: var(--secondary-100);
+
+  --sidebar: var(--black-800);
+  --sidebar-foreground: var(--color-white);
+  --sidebar-primary: var(--color-primary-200);
+  --sidebar-primary-foreground: var(--black-900);
+  --sidebar-accent: var(--secondary-75);
+  --sidebar-accent-foreground: var(--black-700);
+  --sidebar-border: var(--black-600);
+  --sidebar-ring: var(--color-primary-300);
+}
+
 @theme {
+  /* ریست کردن کانفیگ ها */
+  --color-*: initial;
+
+  --color-white: #fff;
+  --color-black: #000;
   /* رنگ‌های اصلی (آبی) */
-  --blue-50: rgb(230 244 251);
-  --blue-75: rgb(150 212 240);
-  --blue-100: rgb(107 194 234);
-  --blue-200: rgb(43 167 224);
-  --blue-300: rgb(0 149 218);
-  --blue-400: rgb(0 104 153);
-  --blue-500: rgb(0 91 133);
+  --color-primary-50: rgb(230 244 251);
+  --color-primary-75: rgb(150 212 240);
+  --color-primary-100: rgb(107 194 234);
+  --color-primary-200: rgb(43 167 224);
+  --color-primary-300: rgb(0 150 218);
+  --color-primary-400: rgb(0 104 153);
+  --color-primary-500: rgb(0 91 133);
 
   /* رنگ‌های خنثی (سفید/سیاه) */
   --neutral-0: rgb(255 255 255);
@@ -33,13 +129,13 @@
   --black-900: rgb(0 0 0);
 
   /* رنگ‌های بازخورد (نارنجی) */
-  --orange-50: rgb(255, 237, 230);
-  --orange-75: rgb(225 183 150);
-  --orange-100: rgb(225 155 107);
-  --orange-200: rgb(225 109 43);
-  --orange-300: rgb(225 79 0);
-  --orange-400: rgb(179 55 0);
-  --orange-500: rgb(156 48 0);
+  --secondary-50: rgb(255, 237, 230);
+  --secondary-75: rgb(225 183 150);
+  --secondary-100: rgb(225 155 107);
+  --secondary-200: rgb(225 109 43);
+  --secondary-300: rgb(225 79 0);
+  --secondary-400: rgb(179 55 0);
+  --secondary-500: rgb(156 48 0);
 
   /* رنگ سبز هم‌راه */
   --hamrah-green: rgb(0, 182, 15);
@@ -47,6 +143,146 @@
   /* اندازه‌های فونت سفارشی */
   --font-size-32px: 2rem; /* 32px */
   --font-size-64px: 4rem; /* 64px */
+
+  --radius: 0.625rem;
+
+  /* Base UI */
+  --background: var(--neutral-0);
+  --foreground: var(--black-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--black-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--black-900);
+
+  /* Primary = Blue-500 */
+  --primary: var(--color-primary-500);
+  --primary-foreground: var(--color-white);
+
+  /* Secondary = Orange-300 */
+  --secondary: var(--secondary-300);
+  --secondary-foreground: var(--color-white);
+
+  /* Others */
+  --muted: var(--neutral-20);
+  --muted-foreground: var(--black-400);
+
+  --accent: var(--secondary-50);
+  --accent-foreground: var(--black-600);
+
+  --destructive: rgb(156, 48, 0); /* orange-500 */
+  --border: var(--neutral-30);
+  --input: var(--neutral-20);
+  --ring: var(--color-primary-200);
+
+  /* Charts */
+  --chart-1: rgb(0, 150, 218); /* blue-300 */
+  --chart-2: rgb(225, 109, 43); /* orange-200 */
+  --chart-3: rgb(0, 182, 15); /* hamrah-green */
+  --chart-4: var(--color-primary-100);
+  --chart-5: var(--secondary-100);
+
+  /* Sidebar */
+  --sidebar: var(--neutral-10);
+  --sidebar-foreground: var(--black-900);
+  --sidebar-primary: var(--color-primary-500);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--secondary-75);
+  --sidebar-accent-foreground: var(--black-700);
+  --sidebar-border: var(--neutral-30);
+  --sidebar-ring: var(--color-primary-300);
+}
+
+@base {
+  .fade-in-to-right {
+    animation: fadeInToRight var(--fade-in-speed, 0.8s) ease forwards
+      var(--animation-delay, 0s);
+  }
+
+  .fade-in-to-left {
+    animation: fadeInToLeft var(--fade-in-speed, 0.8s) ease forwards
+      var(--animation-delay, 0s);
+  }
+
+  .fade-in-to-bottom {
+    animation: fadeInToBottom var(--fade-in-speed, 0.8s) ease forwards
+      var(--animation-delay, 0s);
+  }
+
+  .fade-in-to-top {
+    animation: fadeInToTop var(--fade-in-speed, 0.8s) ease forwards
+      var(--animation-delay, 0s);
+  }
+
+  .fade-in {
+    animation: fadeIn var(--fade-in-speed, 0.8s) ease forwards
+      var(--animation-delay, 0s);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeInToRight {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(calc(var(--fade-transform-value) * -1));
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeInToBottom {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(calc(var(--fade-transform-value) * -1));
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInToTop {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(calc(var(--fade-transform-value)));
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInToLeft {
+    from {
+      opacity: 0;
+      transform: translateX(var(--fade-transform-value));
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 @utility text-32px {
@@ -57,6 +293,6 @@
   font-size: var(--font-size-64px);
 }
 
-@utility text-blue-500 {
-  color: var(--blue-500);
+@utility text-primary-500 {
+  color: var(--primary-500);
 }
