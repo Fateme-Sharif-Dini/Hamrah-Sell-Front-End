@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { TextInput } from '@/src/components/form/TextInput';
-import { Button } from '@/src/components/ui/button';
-import { login, testAuthorization } from '@/src/services/auth';
+import { TextInput } from '@/components/form/TextInput';
+import { Button } from '@/components/ui/button';
+import { login, testAuthorization } from '@/services/auth';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {

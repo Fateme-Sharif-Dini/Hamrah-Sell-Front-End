@@ -37,5 +37,5 @@ export type {
   UnhandledException,
   NotFoundError,
   NetworkError,
-  ApiError
+  ApiError,
 };

@@ -1,4 +1,4 @@
-import { Problem } from "./http-errors.interface";
+import { Problem } from './http-errors.interface';
 
 export type OperationResult<T> = {
   isSuccess: boolean;

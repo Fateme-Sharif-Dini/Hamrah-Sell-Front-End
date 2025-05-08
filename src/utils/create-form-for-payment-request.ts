@@ -6,21 +6,21 @@ export type CreateAndSubmitForm = {
 export const createAndSubmitForm = ({
   url,
   token,
-  callback
+  callback,
 }: CreateAndSubmitForm) => {
-  const form = document.createElement("form");
-  form.setAttribute("action", url);
-  form.setAttribute("method", "POST");
+  const form = document.createElement('form');
+  form.setAttribute('action', url);
+  form.setAttribute('method', 'POST');
 
-  const tokenField = document.createElement("input");
-  tokenField.setAttribute("type", "hidden");
-  tokenField.setAttribute("name", "token");
-  tokenField.setAttribute("value", token);
+  const tokenField = document.createElement('input');
+  tokenField.setAttribute('type', 'hidden');
+  tokenField.setAttribute('name', 'token');
+  tokenField.setAttribute('value', token);
 
-  const redirectURLField = document.createElement("input");
-  redirectURLField.setAttribute("type", "hidden");
-  redirectURLField.setAttribute("name", "GetMethod");
-  redirectURLField.setAttribute("value", "");
+  const redirectURLField = document.createElement('input');
+  redirectURLField.setAttribute('type', 'hidden');
+  redirectURLField.setAttribute('name', 'GetMethod');
+  redirectURLField.setAttribute('value', '');
 
   form.appendChild(redirectURLField);
   form.appendChild(tokenField);

@@ -1,4 +1,4 @@
-import { IProductSearchParams } from "@/app/(main)/(shop)/products/_types/products.types";
+type IProductSearchParams = Record<string, string>;
 
 type QueryParamValue = string | number | boolean | null;
 type QueryParamObject = {
@@ -18,8 +18,8 @@ export const remapSearchParams = (
       const newKey = keyMap[key as keyof IProductSearchParams] || key;
 
       // اگر مقدار رشته‌ای با کاما بود، تبدیل به آرایه‌اش کن
-      if (typeof value === "string" && value.includes(",")) {
-        remapped[newKey] = value.split(",");
+      if (typeof value === 'string' && value.includes(',')) {
+        remapped[newKey] = value.split(',');
       } else {
         remapped[newKey] = value;
       }
@@ -31,7 +31,7 @@ export const remapSearchParams = (
 
 export const buildQueryParams = (
   obj: QueryParamObject,
-  prefix = ""
+  prefix = ''
 ): string => {
   const queryParts: string[] = [];
 
@@ -40,7 +40,7 @@ export const buildQueryParams = (
 
     if (Array.isArray(value)) {
       value.forEach((item) => {
-        if (typeof item === "object" && item !== null) {
+        if (typeof item === 'object' && item !== null) {
           queryParts.push(buildQueryParams(item as QueryParamObject, paramKey));
         } else {
           queryParts.push(
@@ -48,7 +48,7 @@ export const buildQueryParams = (
           );
         }
       });
-    } else if (typeof value === "object" && value !== null) {
+    } else if (typeof value === 'object' && value !== null) {
       queryParts.push(buildQueryParams(value as QueryParamObject, paramKey));
     } else if (value !== undefined && value !== null) {
       queryParts.push(
@@ -57,5 +57,5 @@ export const buildQueryParams = (
     }
   }
 
-  return queryParts.join("&");
+  return queryParts.join('&');
 };

@@ -1,5 +1,3 @@
 export default function DashboardPage() {
-    return (
-       <p>صفحه اصلی</p>
-    )
+  return <p>صفحه اصلی</p>;
 }

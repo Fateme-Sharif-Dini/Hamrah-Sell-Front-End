@@ -1,5 +1,3 @@
 export default function BasicSpecificationsSalesDivisionPage() {
-    return (
-       <p>تقسیم فروش</p>
-    )
+  return <p>تقسیم فروش</p>;
 }

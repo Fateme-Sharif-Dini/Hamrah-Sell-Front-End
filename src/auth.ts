@@ -1,8 +1,8 @@
-import NextAuth, { CredentialsSignin } from "next-auth";
-import { IUser, IUserProfile, UserToken } from "@/types/user.interface";
-import { authConfig } from "./auth.config";
-import { Problem } from "@/types/http-errors.interface";
-declare module "next-auth" {
+import NextAuth, { CredentialsSignin } from 'next-auth';
+import { IUser, IUserProfile, UserToken } from '@/types/user.interface';
+import { authConfig } from './auth.config';
+import { Problem } from '@/types/http-errors.interface';
+declare module 'next-auth' {
   interface User extends IUser {}
 
   interface Session {
@@ -19,7 +19,7 @@ export class AuthorizeError extends CredentialsSignin {
   }
 }
 
-declare module "next-auth/jwt" {
+declare module 'next-auth/jwt' {
   interface JWT {
     // role?: string[]
     token: UserToken;
@@ -31,5 +31,5 @@ export const {
   handlers: { GET, POST },
   auth,
   signIn,
-  signOut
+  signOut,
 } = NextAuth(authConfig);

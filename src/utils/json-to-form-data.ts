@@ -8,7 +8,7 @@ export const jsonToFormData = (json: Record<string, any>): FormData => {
   ): void => {
     if (
       data &&
-      typeof data === "object" &&
+      typeof data === 'object' &&
       !Array.isArray(data) &&
       !(data instanceof File)
     ) {
@@ -20,7 +20,7 @@ export const jsonToFormData = (json: Record<string, any>): FormData => {
       if (data.every((item) => item instanceof File)) {
         const fileList = data.map((file: File) => ({
           name: file.name,
-          file: file
+          file: file,
         }));
         formData.append(parentKey as string, JSON.stringify(fileList));
       } else {

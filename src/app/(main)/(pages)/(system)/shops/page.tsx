@@ -1,5 +1,3 @@
 export default function SystemAdministratorsPage() {
-    return (
-       <p>فروشگاه ها</p>
-    )
+  return <p>فروشگاه ها</p>;
 }

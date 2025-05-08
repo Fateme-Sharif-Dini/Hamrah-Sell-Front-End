@@ -1,40 +1,40 @@
 export const levelConverter = (num: number): string => {
   const level = num + 1;
-  const units = ["", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه"];
+  const units = ['', 'یک', 'دو', 'سه', 'چهار', 'پنج', 'شش', 'هفت', 'هشت', 'نه'];
   const tens = [
-    "",
-    "ده",
-    "بیست",
-    "سی",
-    "چهل",
-    "پنجاه",
-    "شصت",
-    "هفتاد",
-    "هشتاد",
-    "نود"
+    '',
+    'ده',
+    'بیست',
+    'سی',
+    'چهل',
+    'پنجاه',
+    'شصت',
+    'هفتاد',
+    'هشتاد',
+    'نود',
   ];
   const teens = [
-    "ده",
-    "یازده",
-    "دوازده",
-    "سیزده",
-    "چهارده",
-    "پانزده",
-    "شانزده",
-    "هفده",
-    "هجده",
-    "نوزده"
+    'ده',
+    'یازده',
+    'دوازده',
+    'سیزده',
+    'چهارده',
+    'پانزده',
+    'شانزده',
+    'هفده',
+    'هجده',
+    'نوزده',
   ];
 
   if (level > 100) {
-    return "بیشتر از 100 ...";
+    return 'بیشتر از 100 ...';
   }
 
   if (level === 100) {
-    return "سطح صد";
+    return 'سطح صد';
   }
 
-  let levelText = "سطح ";
+  let levelText = 'سطح ';
 
   if (level < 10) {
     levelText += units[level];
@@ -46,7 +46,7 @@ export const levelConverter = (num: number): string => {
 
     levelText += tens[tenPart];
     if (unitPart > 0) {
-      levelText += " و " + units[unitPart];
+      levelText += ' و ' + units[unitPart];
     }
   }
 

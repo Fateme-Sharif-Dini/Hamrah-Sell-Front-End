@@ -15,7 +15,17 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals'),
   {
     plugins: { 'unused-imports': unusedImport },
-    ignores: ['.next/*', 'node_modules/*', 'tailwind.config.mjs', '.husky/*', '.storybook/*', 'cicd/*', 'deployment/*', 'removeConsoleLogs.js', 'src/instrumentation.node.ts'],
+    ignores: [
+      '.next/*',
+      'node_modules/*',
+      'tailwind.config.mjs',
+      '.husky/*',
+      '.storybook/*',
+      'cicd/*',
+      'deployment/*',
+      'removeConsoleLogs.js',
+      'src/instrumentation.node.ts',
+    ],
     rules: {
       'react-hooks/exhaustive-deps': 'off',
       '@typescript-eslint/no-explicit-any': 'off',

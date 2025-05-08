@@ -15,4 +15,4 @@ export const ChevronDown = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export default ChevronDown; 
+export default ChevronDown;

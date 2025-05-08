@@ -1,13 +1,13 @@
 import axios, {
   AxiosRequestConfig,
   AxiosResponse,
-  RawAxiosRequestHeaders
-} from "axios";
-import { API_URL } from "@/configs/global";
-import { getSession } from "next-auth/react";
+  RawAxiosRequestHeaders,
+} from 'axios';
+import { API_URL } from '@/configs/global';
+import { getSession } from 'next-auth/react';
 
-import { auth, signOut } from "@/auth";
-import { getUserSession } from "../get-user-session";
+import { auth, signOut } from '@/auth';
+import { getUserSession } from '../get-user-session';
 
 interface FetchOptions extends RequestInit {
   headers?: Record<string, string>;
@@ -29,19 +29,19 @@ export async function fetchWithAuth<T>(
   url: string,
   options: FetchOptions = {}
 ): Promise<T & ErrorResponse> {
-  const isServer = typeof window === "undefined";
+  const isServer = typeof window === 'undefined';
 
   const session = isServer ? await auth() : await getSession();
   const defaultHeaders: Record<string, string> = session?.token.token
     ? {
-        Authorization: `Bearer ${session?.token.token}`
+        Authorization: `Bearer ${session?.token.token}`,
       }
     : {};
   const contentTypeHeader: () => {} = () => {
     if (options?.formData) {
       return {};
     } else {
-      return { "Content-Type": "application/json" };
+      return { 'Content-Type': 'application/json' };
     }
   };
   const fetchOptions: FetchOptions = {
@@ -49,25 +49,25 @@ export async function fetchWithAuth<T>(
     headers: {
       ...contentTypeHeader(),
       ...defaultHeaders,
-      ...options.headers
-    }
+      ...options.headers,
+    },
   };
 
   const response = await fetch(url, fetchOptions);
 
   // If token is invalid, log out the user
   if (response.status === 401) {
-    const errorData: ErrorResponse = await response.json();
+    // const errorData: ErrorResponse = await response.json();
     try {
       // throw new Error("errorData");
     } catch (error: any) {
       throw new Error(error.message);
     } finally {
-      await fetch("/api/auth/signout");
-      if (typeof window == "object") {
-        window.location.href = "/user/signin";
+      await fetch('/api/auth/signout');
+      if (typeof window == 'object') {
+        window.location.href = '/user/signin';
       } else {
-        signOut({ redirectTo: "/user/signin" });
+        signOut({ redirectTo: '/user/signin' });
       }
     }
   }
@@ -84,8 +84,8 @@ export async function fetchWithAuth<T>(
 export const httpService = axios.create({
   baseURL: API_URL,
   headers: {
-    "Content-Type": "application/json"
-  }
+    'Content-Type': 'application/json',
+  },
   // withCredentials: true,
 });
 
@@ -144,9 +144,9 @@ async function createData<TModel, TResult>(
   headers?: RawAxiosRequestHeaders
 ): Promise<TResult> {
   const options: AxiosRequestConfig = {
-    method: "POST",
+    method: 'POST',
     headers: headers,
-    data: JSON.stringify(data)
+    data: JSON.stringify(data),
   };
 
   return await apiBase<TResult>(url, options);
@@ -159,7 +159,7 @@ async function readData<T>(
 ): Promise<T> {
   const options: AxiosRequestConfig = {
     headers: headers,
-    params
+    params,
   };
 
   return await apiBase<T>(url, options);
@@ -173,8 +173,8 @@ async function readAuthenticatedData<T>(
   const options: AxiosRequestConfig = {
     headers: {
       ...headers,
-      Authorization: `Bearer ${session?.token.token}`
-    }
+      Authorization: `Bearer ${session?.token.token}`,
+    },
   };
 
   return await apiBase<T>(url, options);
@@ -186,9 +186,9 @@ async function updateData<TModel, TResult>(
   headers?: RawAxiosRequestHeaders
 ): Promise<TResult> {
   const options: AxiosRequestConfig = {
-    method: "PUT",
+    method: 'PUT',
     headers: headers,
-    data: JSON.stringify(data)
+    data: JSON.stringify(data),
   };
 
   return await apiBase<TResult>(url, options);
@@ -199,8 +199,8 @@ async function deleteData(
   headers?: RawAxiosRequestHeaders
 ): Promise<void> {
   const options: AxiosRequestConfig = {
-    method: "DELETE",
-    headers: headers
+    method: 'DELETE',
+    headers: headers,
   };
 
   return await apiBase(url, options);

@@ -1,5 +1,3 @@
 export default function SystemAdministratorsPage() {
-    return (
-       <p>مدیران سیستم</p>
-    )
+  return <p>مدیران سیستم</p>;
 }

@@ -1,2 +1,2 @@
 export const addCommaToNumber = (number: number) =>
-  number.toLocaleString("fa-IR");
+  number.toLocaleString('fa-IR');

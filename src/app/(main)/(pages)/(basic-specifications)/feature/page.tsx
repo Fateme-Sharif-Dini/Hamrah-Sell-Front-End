@@ -1,5 +1,3 @@
 export default function BasicSpecificationsFeaturePage() {
-    return (
-       <p>ویژگی ها</p>
-    )
+  return <p>ویژگی ها</p>;
 }

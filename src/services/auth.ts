@@ -1,4 +1,4 @@
-import axiosInstance from '@/src/lib/api';
+import axiosInstance from '@/lib/api';
 
 interface LoginResponse {
   access: string;
@@ -45,7 +45,9 @@ export async function login(
     });
 
     throw {
-      message: error.response?.data?.detail || 'Login failed. Please check your credentials.',
+      message:
+        error.response?.data?.detail ||
+        'Login failed. Please check your credentials.',
       status: error.response?.status || 500,
     } as LoginError;
   }
@@ -69,6 +71,7 @@ export async function refreshToken(): Promise<string> {
 
     return response.data.access;
   } catch (error) {
+    console.log({ error });
     throw new Error('Failed to refresh token');
   }
 }
@@ -99,8 +102,8 @@ export async function testAuthorization(): Promise<void> {
     console.log('Access token is valid:', response.data);
 
     // Test token refresh
-    const newAccessToken = await refreshToken();
-    console.log('Token refresh successful:', newAccessToken);
+    // const newAccessToken = await refreshToken();
+    // console.log('Token refresh successful:', newAccessToken);
 
     // Test user data
     const userData = localStorage.getItem('user');

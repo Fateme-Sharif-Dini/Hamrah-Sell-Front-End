@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
-import { API_URL } from "@/configs/global"; // Global API URL configuration
-import { AuthorizeError, auth, signOut } from "@/auth"; // Authentication utilities
-import { Problem } from "@/types/http-errors.interface"; // Problem type for HTTP errors
-import { OperationResult } from "@/types/operation-result"; // Operation result type
-import { redirect, RedirectType } from "next/navigation"; // Redirect utilities from Next.js
+import { API_URL } from '@/configs/global'; // Global API URL configuration
+import { AuthorizeError, auth, signOut } from '@/auth'; // Authentication utilities
+import { Problem } from '@/types/http-errors.interface'; // Problem type for HTTP errors
+import { OperationResult } from '@/types/operation-result'; // Operation result type
+import { redirect, RedirectType } from 'next/navigation'; // Redirect utilities from Next.js
 
 export type FetchWrapperArgs = {
   onSuccess?: () => void; // Optional success callback
@@ -28,37 +28,38 @@ export const fetchWrapper = async <T = void>(
     if (!args?.noAuth && !session?.token.token) {
       // If no access token, sign out and set redirect path
       signOut();
-      redirectPath = "/signin";
+      redirectPath = '/signin';
     }
 
     // Fetch data from API with the provided options and authorization header
     const response = await fetch(`${args?.API_URL ?? API_URL}${url}`, {
       ...options,
-      cache: "no-store",
+      cache: 'no-store',
       headers: {
         ...options.headers,
         ...(!args?.noAuth
           ? { Authorization: `Bearer ${session?.token.token}` }
-          : {})
-      }
+          : {}),
+      },
     });
 
     if (!response.ok) {
       // Handle unauthorized access
       if (!args?.noAuth && response.status === 401) {
         signOut();
-        redirectPath = "/signin";
+        redirectPath = '/signin';
       } else {
         // Handle other response errors
         let error: Problem | undefined;
         try {
           error = (await response.json()) as Problem;
         } catch (jsonError) {
+          console.log({ jsonError });
           // If parsing JSON fails, handle it accordingly
           throw new AuthorizeError({
             status: response.status,
-            title: "Failed to parse error response",
-            detail: "The response could not be parsed as JSON."
+            title: 'Failed to parse error response',
+            detail: 'The response could not be parsed as JSON.',
           });
         }
         if (error) {
@@ -91,7 +92,7 @@ export const fetchWrapper = async <T = void>(
 
 // Redirect handler function
 const handleRedirect = (): never => {
-  return redirect("/signin", RedirectType.push);
+  return redirect('/signin', RedirectType.push);
 };
 
 // Error handler function
@@ -100,15 +101,15 @@ const handleError = <T>(error: unknown): OperationResult<T> => {
     isSuccess: false,
     error: {
       status: 400,
-      title: "خطایی رخ داد."
-    }
+      title: 'خطایی رخ داد.',
+    },
   };
   // Customize error handling for AuthorizeError
   if (error instanceof AuthorizeError) {
     operationResult.error = error.problem!;
     if (!operationResult.error.detail) {
       operationResult.error.detail =
-        operationResult.error.title || "خظایی سمت سرور رخ داد";
+        operationResult.error.title || 'خظایی سمت سرور رخ داد';
     }
   }
   return operationResult; // Return the operation result with error

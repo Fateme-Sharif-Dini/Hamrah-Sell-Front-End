@@ -47,10 +47,6 @@ const SearchableDropdown = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Variant styles
-  const variantStyles = {
-    primary: 'border',
-  };
   return (
     <div className="w-full space-y-1">
       {label && (

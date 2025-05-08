@@ -5,8 +5,8 @@ import {
   NotFoundError,
   UnauthorizedError,
   UnhandledException,
-  ValidationError
-} from "@/types/http-errors.interface";
+  ValidationError,
+} from '@/types/http-errors.interface';
 
 export type ApiErrorHandler = (errorData: ApiError) => void;
 
@@ -19,22 +19,22 @@ export const validationErrorStrategy: ApiErrorHandler = (errorData) => {
 };
 
 export const notFoundErrorStrategy: ApiErrorHandler = (errorData) => {
-  throw { ...errorData, detail: "سرویس مورد نظر یافت نشد" } as NotFoundError;
+  throw { ...errorData, detail: 'سرویس مورد نظر یافت نشد' } as NotFoundError;
 };
 
 export const UnauthorizedErrorStrategy: ApiErrorHandler = (errorData) => {
   throw {
     ...errorData,
-    detail: "دسترسی به سرویس مورد نظر امکان پذیر نمی باشد"
+    detail: 'دسترسی به سرویس مورد نظر امکان پذیر نمی باشد',
   } as UnauthorizedError;
 };
 
 export const unhandledExceptionStrategy: ApiErrorHandler = (errorData) => {
-  throw { ...errorData, detail: "خطای سرور" } as UnhandledException;
+  throw { ...errorData, detail: 'خطای سرور' } as UnhandledException;
 };
 
 export const networkErrorStrategy = () => {
-  throw { detail: "خطای شبکه" } as NetworkError;
+  throw { detail: 'خطای شبکه' } as NetworkError;
 };
 
 export const errorHandler: Record<number, ApiErrorHandler> = {
@@ -44,5 +44,5 @@ export const errorHandler: Record<number, ApiErrorHandler> = {
     ),
   403: UnauthorizedErrorStrategy,
   404: notFoundErrorStrategy,
-  500: unhandledExceptionStrategy
+  500: unhandledExceptionStrategy,
 };

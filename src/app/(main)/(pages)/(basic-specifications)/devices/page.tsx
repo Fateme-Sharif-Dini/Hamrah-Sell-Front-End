@@ -1,5 +1,3 @@
 export default function BasicSpecificationsDevicesPage() {
-    return (
-       <p>دستگاه ها</p>
-    )
+  return <p>دستگاه ها</p>;
 }

@@ -1,5 +1,3 @@
 export default function ReportsPage() {
-    return (
-       <p>گزارش</p>
-    )
+  return <p>گزارش</p>;
 }

@@ -5,8 +5,8 @@ export const API_URL_CLB = process.env.NEXT_PUBLIC_API_URL_CLB;
 
 export const TAPI_URL = process.env.NEXT_PUBLIC_TAPI_URL;
 
-export const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
-export const IS_PRODUCTION = process.env.NODE_ENV === "production";
+export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+export const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 export const RE_CAPTCHA_SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
 

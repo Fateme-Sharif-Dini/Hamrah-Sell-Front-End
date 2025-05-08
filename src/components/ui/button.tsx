@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 import { ButtonHTMLAttributes, ReactNode, ComponentType } from 'react';
-import { cn } from '@/src/lib/utils'; // Helper to merge classNames
+import { cn } from '@/lib/utils'; // Helper to merge classNames
 
 const buttonVariants = cva(
   'flex items-end justify-center rounded-[10px] text-xl font-bold transition-colors focus-visible:outline-none cursor-pointer transition-all duration-300',
@@ -42,9 +42,7 @@ export function Button({
       {...props}
     >
       {children}
-      {size === 'large' && Icon && (
-        <Icon className="h-5 w-5" />
-      )}
+      {size === 'large' && Icon && <Icon className="h-5 w-5" />}
     </button>
   );
 }

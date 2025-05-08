@@ -7,18 +7,18 @@ import {
   boolean,
   custom,
   email,
-  minLength
-} from "valibot";
+  minLength,
+} from 'valibot';
 
 // General schema for validating mobile numbers
 const MobileSchema = pipe(
   string(),
   trim(),
-  length(11, "شماره موبایل باید 11 رقم باشد"),
-  startsWith("09", "شماره موبایل باید با 09 شروع شود")
+  length(11, 'شماره موبایل باید 11 رقم باشد'),
+  startsWith('09', 'شماره موبایل باید با 09 شروع شود')
 );
 
-const EmailSchema = pipe(string(), trim(), email("ایمیل وارد شده صحیح نیست"));
+const EmailSchema = pipe(string(), trim(), email('ایمیل وارد شده صحیح نیست'));
 
 const AcceptSchema = pipe(
   boolean(),
@@ -32,5 +32,5 @@ export const Schemas = {
   Mobile: MobileSchema,
   Email: EmailSchema,
   Accept: AcceptSchema,
-  createRequiredStringSchema: createRequiredStringSchema
+  createRequiredStringSchema: createRequiredStringSchema,
 };

@@ -1,5 +1,3 @@
 export default function SystemAdministratorsPage() {
-    return (
-       <p>شرکت های نمایندگی</p>
-    )
+  return <p>شرکت های نمایندگی</p>;
 }

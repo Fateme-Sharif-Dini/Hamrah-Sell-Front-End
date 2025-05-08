@@ -2,19 +2,19 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Check EsLint Standards
-npm run lint-check || {
+pnpm lint-check || {
     echo 'EsLint Check Failed'
     false
 }
 
 # Check tsconfig Standards
-npm run type-check || {
+pnpm type-check || {
     echo 'Type Check Failed'
     false
 }
 
 # Run Prettier
-npm run format || {
+pnpm format || {
     echo 'Prettier Check Failed'
     false
 }

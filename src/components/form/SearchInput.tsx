@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 import { MagnifyingGlass } from '../icons/magnifyingGlassIcon';
 import { Input } from '../ui/input';
 

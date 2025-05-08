@@ -1,4 +1,4 @@
-import { ErrorResponse } from "./http-service";
+import { ErrorResponse } from './http-service';
 
 export class BlazeError extends Error {
   data: Partial<ErrorResponse> = {};
@@ -8,7 +8,7 @@ export class BlazeError extends Error {
     title,
     traceId,
     type,
-    message
+    message,
   }: Partial<ErrorResponse>) {
     super(message);
     this.data.type = type;
