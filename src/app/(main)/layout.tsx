@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
-  return <div>{children}</div>;
+  return <div className="grid grid-cols-12"></div>;
 }
