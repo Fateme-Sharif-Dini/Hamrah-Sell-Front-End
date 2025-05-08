@@ -1,96 +1,5 @@
 @import 'tailwindcss';
 
-:root {
-  --radius: 0.625rem;
-  --color-white: #fff;
-  --color-black: #000;
-  /* Base UI */
-  --background: var(--neutral-0);
-  --foreground: var(--black-900);
-  --card: var(--neutral-0);
-  --card-foreground: var(--black-900);
-  --popover: var(--neutral-0);
-  --popover-foreground: var(--black-900);
-
-  /* Primary = Blue-500 */
-  --primary: var(--color-primary-500);
-  --primary-foreground: var(--color-white);
-
-  /* Secondary = Orange-300 */
-  --secondary: var(--secondary-300);
-  --secondary-foreground: var(--color-white);
-
-  /* Others */
-  --muted: var(--neutral-20);
-  --muted-foreground: var(--black-400);
-
-  --accent: var(--secondary-50);
-  --accent-foreground: var(--black-600);
-
-  --destructive: rgb(156, 48, 0); /* orange-500 */
-  --border: var(--neutral-30);
-  --input: var(--neutral-20);
-  --ring: var(--color-primary-200);
-
-  /* Charts */
-  --chart-1: rgb(0, 150, 218); /* blue-300 */
-  --chart-2: rgb(225, 109, 43); /* orange-200 */
-  --chart-3: rgb(0, 182, 15); /* hamrah-green */
-  --chart-4: var(--color-primary-100);
-  --chart-5: var(--secondary-100);
-
-  /* Sidebar */
-  --sidebar: var(--neutral-10);
-  --sidebar-foreground: var(--black-900);
-  --sidebar-primary: var(--color-primary-500);
-  --sidebar-primary-foreground: var(--color-white);
-  --sidebar-accent: var(--secondary-75);
-  --sidebar-accent-foreground: var(--black-700);
-  --sidebar-border: var(--neutral-30);
-  --sidebar-ring: var(--color-primary-300);
-}
-
-.dark {
-  --background: var(--black-900);
-  --foreground: var(--color-white);
-  --card: var(--black-800);
-  --card-foreground: var(--color-white);
-  --popover: var(--black-700);
-  --popover-foreground: var(--color-white);
-
-  --primary: var(--color-primary-100);
-  --primary-foreground: var(--black-900);
-
-  --secondary: var(--secondary-50);
-  --secondary-foreground: var(--black-500);
-
-  --muted: var(--black-700);
-  --muted-foreground: var(--neutral-60);
-
-  --accent: var(--color-primary-50);
-  --accent-foreground: var(--black-900);
-
-  --destructive: var(--secondary-500);
-  --border: var(--black-700);
-  --input: var(--black-800);
-  --ring: var(--color-primary-200);
-
-  --chart-1: var(--color-primary-200);
-  --chart-2: var(--secondary-200);
-  --chart-3: var(--hamrah-green);
-  --chart-4: var(--color-primary-100);
-  --chart-5: var(--secondary-100);
-
-  --sidebar: var(--black-800);
-  --sidebar-foreground: var(--color-white);
-  --sidebar-primary: var(--color-primary-200);
-  --sidebar-primary-foreground: var(--black-900);
-  --sidebar-accent: var(--secondary-75);
-  --sidebar-accent-foreground: var(--black-700);
-  --sidebar-border: var(--black-600);
-  --sidebar-ring: var(--color-primary-300);
-}
-
 @theme {
   /* ریست کردن کانفیگ ها */
   --color-*: initial;
@@ -107,35 +16,35 @@
   --color-primary-500: rgb(0 91 133);
 
   /* رنگ‌های خنثی (سفید/سیاه) */
-  --neutral-0: rgb(255 255 255);
-  --neutral-10: rgb(245 245 245);
-  --neutral-20: rgb(235 235 235);
-  --neutral-30: rgb(222 222 222);
-  --neutral-40: rgb(191 191 191);
-  --neutral-60: rgb(176 176 176);
-  --neutral-70: rgb(163 163 163);
-  --neutral-80: rgb(148 148 148);
-  --neutral-80b: rgb(133 133 133);
+  --color-neutral-0: rgb(255 255 255);
+  --color-neutral-10: rgb(245 245 245);
+  --color-neutral-20: rgb(235 235 235);
+  --color-neutral-30: rgb(222 222 222);
+  --color-neutral-40: rgb(191 191 191);
+  --color-neutral-60: rgb(176 176 176);
+  --color-neutral-70: rgb(163 163 163);
+  --color-neutral-80: rgb(148 148 148);
+  --color-neutral-80b: rgb(133 133 133);
 
   /* رنگ‌های ثانویه (سیاه) */
-  --black-100: rgb(117 117 117);
-  --black-200: rgb(102 102 102);
-  --black-300: rgb(87 87 87);
-  --black-400: rgb(74 74 74);
-  --black-500: rgb(59 59 59);
-  --black-600: rgb(40 40 40);
-  --black-700: rgb(28 28 28);
-  --black-800: rgb(19 19 19);
-  --black-900: rgb(0 0 0);
+  --color-black-100: rgb(117 117 117);
+  --color-black-200: rgb(102 102 102);
+  --color-black-300: rgb(87 87 87);
+  --color-black-400: rgb(74 74 74);
+  --color-black-500: rgb(59 59 59);
+  --color-black-600: rgb(40 40 40);
+  --color-black-700: rgb(28 28 28);
+  --color-black-800: rgb(19 19 19);
+  --color-black-900: rgb(0 0 0);
 
   /* رنگ‌های بازخورد (نارنجی) */
-  --secondary-50: rgb(255, 237, 230);
-  --secondary-75: rgb(225 183 150);
-  --secondary-100: rgb(225 155 107);
-  --secondary-200: rgb(225 109 43);
-  --secondary-300: rgb(225 79 0);
-  --secondary-400: rgb(179 55 0);
-  --secondary-500: rgb(156 48 0);
+  --color-secondary-50: rgb(255, 237, 230);
+  --color-secondary-75: rgb(225 183 150);
+  --color-secondary-100: rgb(225 155 107);
+  --color-secondary-200: rgb(225 109 43);
+  --color-secondary-300: rgb(225 79 0);
+  --color-secondary-400: rgb(179 55 0);
+  --color-secondary-500: rgb(156 48 0);
 
   /* رنگ سبز هم‌راه */
   --hamrah-green: rgb(0, 182, 15);
@@ -193,6 +102,56 @@
 }
 
 @base {
+  :root {
+    --radius: 0.625rem;
+    --color-white: #fff;
+    --color-black: #000;
+    /* Base UI */
+    --background: var(--neutral-0);
+    --foreground: var(--black-900);
+    --card: var(--neutral-0);
+    --card-foreground: var(--black-900);
+    --popover: var(--neutral-0);
+    --popover-foreground: var(--black-900);
+
+    /* Primary = Blue-500 */
+    --primary: var(--color-primary-500);
+    --primary-foreground: var(--color-white);
+
+    /* Secondary = Orange-300 */
+    --secondary: var(--secondary-300);
+    --secondary-foreground: var(--color-white);
+
+    /* Others */
+    --muted: var(--neutral-20);
+    --muted-foreground: var(--black-400);
+
+    --accent: var(--secondary-50);
+    --accent-foreground: var(--black-600);
+
+    --destructive: rgb(156, 48, 0); /* orange-500 */
+    --border: var(--neutral-30);
+    --input: var(--neutral-20);
+    --ring: var(--color-primary-200);
+
+    /* Charts */
+    --chart-1: rgb(0, 150, 218); /* blue-300 */
+    --chart-2: rgb(225, 109, 43); /* orange-200 */
+    --chart-3: rgb(0, 182, 15); /* hamrah-green */
+    --chart-4: var(--color-primary-100);
+    --chart-5: var(--secondary-100);
+
+    /* Sidebar */
+    --sidebar: var(--neutral-10);
+    --sidebar-foreground: var(--black-900);
+    --sidebar-primary: var(--color-primary-500);
+    --sidebar-primary-foreground: var(--color-white);
+    --sidebar-accent: var(--secondary-75);
+    --sidebar-accent-foreground: var(--black-700);
+    --sidebar-border: var(--neutral-30);
+    --sidebar-ring: var(--color-primary-300);
+  }
+
   .fade-in-to-right {
     animation: fadeInToRight var(--fade-in-speed, 0.8s) ease forwards
       var(--animation-delay, 0s);
