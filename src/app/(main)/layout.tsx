@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
       <div>
         <DashboardSidebar />
       </div>
-      <div className="p-8">{children}</div>
+      <div className="w-full p-8">{children}</div>
     </div>
   );
 }

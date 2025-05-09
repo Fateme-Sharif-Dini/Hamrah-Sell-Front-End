@@ -2,6 +2,7 @@ export { default as ArrowRightStartOnRectangle } from './arrow-right-start-on-re
 export { default as Bars4 } from './bars-4';
 export { default as Calendar } from './calendar';
 export { default as ChevronDoubleRight } from './chevron-double-right';
+export { default as ChevronLeft } from './chevron-left';
 export { default as Clock } from './clock';
 export { default as DeviceTablet } from './device-tablet';
 export { default as DocumentChartBar } from './document-chart-bar';

@@ -4,14 +4,14 @@
   /* ریست کردن کانفیگ ها */
   --color-*: initial;
 
-  --color-white: #fff;
-  --color-black: #000;
+  --color-white: oklch(1 0 0 / 1);
+  --color-black: oklch(0 0 0 / 1);
   /* رنگ‌های اصلی (آبی) */
   --color-primary-50: rgb(230 244 251);
   --color-primary-75: rgb(150 212 240);
   --color-primary-100: rgb(107 194 234);
   --color-primary-200: rgb(43 167 224);
-  --color-primary-300: rgb(0 150 218);
+  --color-primary-300: oklch(0.64 0.15 239.76 / 1);
   --color-primary-400: rgb(0 104 153);
   --color-primary-500: rgb(0 91 133);
 
@@ -37,8 +37,11 @@
   --color-black-800: rgb(19 19 19);
   --color-black-900: rgb(0 0 0);
 
+  --color-black-white-50: oklch(0.8 0 0 / 1);
+  --color-black-white-300: oklch(0.46 0 0 / 1);
+
   /* رنگ‌های بازخورد (نارنجی) */
-  --color-secondary-50: rgb(255, 237, 230);
+  --color-secondary-50: oklch(0.96 0.02 42.58 / 1);
   --color-secondary-75: rgb(225 183 150);
   --color-secondary-100: rgb(225 155 107);
   --color-secondary-200: rgb(225 109 43);
@@ -47,7 +50,7 @@
   --color-secondary-500: rgb(156 48 0);
 
   /* رنگ سبز هم‌راه */
-  --hamrah-green: rgb(0, 182, 15);
+  --hamrah-green: oklch(0.67 0.23 142.87 / 1);
 
   /* اندازه‌های فونت سفارشی */
   --font-size-32px: 2rem; /* 32px */
@@ -84,9 +87,9 @@
   --ring: var(--color-primary-200);
 
   /* Charts */
-  --chart-1: rgb(0, 150, 218); /* blue-300 */
-  --chart-2: rgb(225, 109, 43); /* orange-200 */
-  --chart-3: rgb(0, 182, 15); /* hamrah-green */
+  --chart-1: oklch(0.64 0.14 239.22 / 1); /* blue-300 */
+  --chart-2: oklch(0.66 0.16 46.49 / 1); /* orange-200 */
+  --chart-3: oklch(0.67 0.23 142.87 / 1); /* hamrah-green */
   --chart-4: var(--color-primary-100);
   --chart-5: var(--secondary-100);
 
@@ -104,8 +107,8 @@
 @base {
   :root {
     --radius: 0.625rem;
-    --color-white: #fff;
-    --color-black: #000;
+    --color-white: oklch(1 0 0 / 1);
+    --color-black: oklch(0 0 0 / 1);
     /* Base UI */
     --background: var(--neutral-0);
     --foreground: var(--black-900);
@@ -135,9 +138,9 @@
     --ring: var(--color-primary-200);
 
     /* Charts */
-    --chart-1: rgb(0, 150, 218); /* blue-300 */
-    --chart-2: rgb(225, 109, 43); /* orange-200 */
-    --chart-3: rgb(0, 182, 15); /* hamrah-green */
+    --chart-1: oklch(0.64 0.14 239.22 / 1); /* blue-300 */
+    --chart-2: oklch(0.66 0.16 46.49 / 1); /* orange-200 */
+    --chart-3: oklch(0.67 0.23 142.87 / 1); /* hamrah-green */
     --chart-4: var(--color-primary-100);
     --chart-5: var(--secondary-100);
 

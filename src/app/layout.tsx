@@ -3,6 +3,7 @@ import { Toaster } from 'sonner';
 import './globals.css';
 import classnames from 'classnames';
 import { IranSans } from '@/configs/font';
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   title: 'Hamrah Sell',
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={classnames(IranSans.className)}>
         <main>{children}</main>
+        <NextTopLoader color="#FF4F00" />
         <Toaster richColors closeButton />
       </body>
     </html>
