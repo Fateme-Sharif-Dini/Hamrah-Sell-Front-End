@@ -1,3 +1,4 @@
+export { default as ArrowLeft } from './arrow-left';
 export { default as ArrowRightStartOnRectangle } from './arrow-right-start-on-rectangle';
 export { default as Bars4 } from './bars-4';
 export { default as Calendar } from './calendar';
@@ -6,7 +7,10 @@ export { default as ChevronLeft } from './chevron-left';
 export { default as Clock } from './clock';
 export { default as DeviceTablet } from './device-tablet';
 export { default as DocumentChartBar } from './document-chart-bar';
+export { default as Funnel } from './funnel';
 export { default as Home } from './home';
 export { default as LogoB2 } from './logo-b2';
 export { default as Mail01 } from './mail-01';
+export { default as Plus } from './plus';
+export { default as Search } from './search';
 export { default as UserGroup } from './user-group';

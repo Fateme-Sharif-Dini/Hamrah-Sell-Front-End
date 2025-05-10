@@ -86,7 +86,8 @@ export const DashboardSidebar: FC = () => {
 
         <ul className="space-y-4">
           {menus.map(({ id, title, icon, href, action }) => {
-            const isActive = href === pathName;
+            const isActive =
+              href !== '/' ? pathName.startsWith(href) : href === pathName;
             return (
               <li key={id}>
                 <Button
