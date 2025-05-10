@@ -13,6 +13,8 @@ export const BreadCrumb = () => {
    */
   const title: Record<string, string[]> = {
     '/basic-specifications': ['مشخصات پایه کالا', 'منوی داخلی'],
+    '/system': ['اجزای سیستم', 'منوی داخلی'],
+    '/reports': ['گزارش‌ها', 'منوی داخلی'],
   };
 
   return (

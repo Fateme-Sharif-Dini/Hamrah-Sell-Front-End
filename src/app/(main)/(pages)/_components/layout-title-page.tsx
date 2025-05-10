@@ -16,6 +16,8 @@ export const LayoutTitlePage: FC = () => {
 
   const title: Record<string, string> = {
     '/basic-specifications': 'مشخصات پایه کالا',
+    '/system': 'اجزای سیستم',
+    '/reports': 'گزارش‌ها',
   };
 
   return (

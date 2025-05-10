@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { LayoutTitlePage } from '../../_components/layout-title-page';
 import { BreadCrumb } from '../../_components/breadcrumb';
-import Link from 'next/link';
-import SvgChevronLeft from '@/components/icons/chevron-left';
+import { PageListCard } from '@/app/(main)/_components/page-list-card';
 
 const lins: { id: number; title: string; href: string }[] = [
   {
@@ -52,27 +51,9 @@ export default function BasicSpecificationsPage() {
       </div>
 
       <ul className="space-y-4">
-        {lins.map(({ id, title, href }) => (
-          <li key={id}>
-            <Link
-              href={href}
-              className="border-black-white-50 flex items-center overflow-hidden rounded-lg border-2"
-            >
-              <Image
-                src="/images/mobile-cart-image.png"
-                width={192}
-                height={100}
-                className="h-[100px]"
-                alt={title}
-              />
-              <div className="flex h-[100px] w-full flex-col justify-between">
-                <div className="flex h-full items-center justify-between px-8 py-4">
-                  <p className="font-bold text-[32pdx]">{title}</p>
-                  <SvgChevronLeft className="text-black-white-50" />
-                </div>
-                <div className="bg-primary-300 h-8"></div>
-              </div>
-            </Link>
+        {lins.map((item) => (
+          <li key={item.id}>
+            <PageListCard {...item} />
           </li>
         ))}
       </ul>
