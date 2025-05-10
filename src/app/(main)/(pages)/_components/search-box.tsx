@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { FC, Suspense, useState } from 'react';
 import SvgSearch from '@/components/icons/search';
 import useSearchUrlUpdater from '@/hooks/use-search-url-updater';
 
-export const SearchBox = () => {
+type Props = {};
+
+const FakeSearchBox: FC<Props> = () => {
   const [query, setQuery] = useState('');
   const updateUrl = useSearchUrlUpdater();
 
@@ -35,5 +37,13 @@ export const SearchBox = () => {
         <SvgSearch />
       </button>
     </div>
+  );
+};
+
+export const SearchBox: FC<Props> = (props) => {
+  return (
+    <Suspense>
+      <FakeSearchBox {...props} />
+    </Suspense>
   );
 };
