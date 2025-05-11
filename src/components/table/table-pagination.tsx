@@ -2,8 +2,9 @@
 
 import useSearchUrlUpdater from '@/hooks/use-search-url-updater';
 import Pagination from '../pagination/pagination';
+import { Suspense } from 'react';
 
-const ProductPagination = () => {
+const FakeProductPagination = () => {
   const updateUrl = useSearchUrlUpdater();
   const onPageChanged = (page: number) => {
     updateUrl({ page });
@@ -14,4 +15,10 @@ const ProductPagination = () => {
   );
 };
 
-export default ProductPagination;
+export default function ProductPagination() {
+  return (
+    <Suspense>
+      <FakeProductPagination />
+    </Suspense>
+  );
+}
