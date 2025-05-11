@@ -37,6 +37,7 @@
   --color-black-800: rgb(19 19 19);
   --color-black-900: rgb(0 0 0);
 
+  --color-black-white-10: #fafafa;
   --color-black-white-50: oklch(0.8 0 0 / 1);
   --color-black-white-300: oklch(0.46 0 0 / 1);
 
